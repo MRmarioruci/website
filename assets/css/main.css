@@ -150,3 +150,33 @@ h1, h2, h3, h4, h5, h6 {
 .skill__item{
     display:inline-block;margin:10px;background:#fff;width: 22%;text-align: center;border-radius: 20px;box-shadow: 0 0 15px 0 rgba(42,87,128,0.07), 0 14px 20px 0 rgba(42,87,128,0.12);height:140px;padding: 10px;
 }
+.project__item{
+    -webkit-box-sizing: border-box;
+    -webkit-transition: border-color .3s ease-in,-webkit-box-shadow .3s ease-in;
+    border: 3px solid #F0F4F8;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin: 30px 5px 20px;
+    padding: 0.8rem;
+    transition: border-color .3s ease-in,-webkit-box-shadow .3s ease-in;
+    transition: border-color .3s ease-in,box-shadow .3s ease-in;
+    transition: border-color .3s ease-in,box-shadow .3s ease-in,-webkit-box-shadow .3s ease-in;
+    width: 100%;
+    height: auto;
+    float: left;
+    width:32%;
+}
+.project__item:hover{
+    border:2px solid #268bff;
+}
+.project__item-title{
+    margin-top:-25px;
+}
+.project__item-icon{
+    margin-top: -35px;
+    background:#fff;
+    border:2px solid #268bff;
+    padding:7px;
+    width:50px;
+    border-radius: 6px;
+}

@@ -1,6 +1,13 @@
 function indexViewModel() {
     var self = this;
     var $win = $(window);
+    self.redirect = function(section){
+        $('body').animate({
+            scrollTop: eval($('#' + section).offset().top - 70)
+        }, 1000);
+
+       
+    }
     self.skill_categories = ko.observableArray([
         {
             name:'Programming languages',
@@ -56,7 +63,7 @@ function indexViewModel() {
                     isImage:false,
                 },
                 {
-                    name: 'Knockout',
+                    name: 'Knockout.js',
                     icon:'<i class="fab fa-kickstarter-k"></i>',
                     isImage:false,
                 },
@@ -74,6 +81,16 @@ function indexViewModel() {
                     name: 'Codeigniter',
                     icon:'codeigniter.png',
                     isImage:true,
+                },
+                {
+                    name: 'Wordpress',
+                    icon:'<i class="fab fa-wordpress"></i>',
+                    isImage:false,
+                },
+                {
+                    name: 'Joomla',
+                    icon: '<i class="fab fa-joomla"></i>',
+                    isImage:false,
                 }
             ]
         },

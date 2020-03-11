@@ -3,7 +3,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mario Ruci</title>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="assets/css/main.css" rel="stylesheet">
 	<link href="assets/css/timeline.css" rel="stylesheet">
 	<link href="assets/css/animate.css" rel="stylesheet">
@@ -14,11 +14,11 @@
 		<div class="container">
 			<div class="navbar-collapse collapse justify-content-between w-100" id="collapsingNavbar2">
 				<ul class="topBotomBordersOut navbar-nav mx-auto text-right" >
-					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-					<li class="nav-item"> <a class="nav-link" href="#">Skills</a> 
-						<li class="nav-item"> <a class="nav-link" href="#"><img src="assets/images/logo.png" class="animated pulse" width="120"></a> 
-							<li class="nav-item"> <a class="nav-link" href="#">Work</a> 
-								<li class="nav-item"> <a class="nav-link" href="#">Contact</a> 
+					<li class="nav-item"><a class="nav-link" href="#" data-bind="click:redirect.bind($data,'about')">About</a></li>
+					<li class="nav-item"> <a class="nav-link" href="#" data-bind="click:redirect.bind($data,'skills')">Skills</a> 
+						<li class="nav-item"> <a class="nav-link" href="#"  data-bind="click:redirect.bind($data,'home')"><img src="assets/images/logo.png" class="animated pulse" width="120"></a> 
+							<li class="nav-item"> <a class="nav-link" href="#" data-bind="click:redirect.bind($data,'work')">Work</a> 
+								<li class="nav-item"> <a class="nav-link" href="#" data-bind="click:redirect.bind($data,'contact')">Contact</a> 
 								</li>
 							</li>
 						</li>
@@ -31,14 +31,14 @@
 		<div class="container">
 			<div class="navbar-collapse collapse justify-content-between w-100 navbar-white" id="collapsingNavbar2">
 				<ul class="topBotomBordersOut navbar-nav mx-auto text-right" >
-					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-					<li class="nav-item"> <a class="nav-link" href="#">Skills</a> 
+					<li class="nav-item"><a class="nav-link" href="#" data-bind="click:redirect.bind($data,'about')">About</a></li>
+					<li class="nav-item"> <a class="nav-link" href="#" data-bind="click:redirect.bind($data,'skills')">Skills</a> 
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" href="#"  data-bind="click:redirect.bind($data,'home')">
 								<img src="assets/images/logo__icon.png" class="animated pulse" width="30"><img src="assets/images/logo_secondary.png" class="animated pulse" width="120">
 							</a> 
-							<li class="nav-item"> <a class="nav-link" href="#">Work</a> 
-								<li class="nav-item"> <a class="nav-link" href="#">Contact</a> 
+							<li class="nav-item"> <a class="nav-link" href="#" data-bind="click:redirect.bind($data,'work')">Work</a> 
+								<li class="nav-item"> <a class="nav-link" href="#" data-bind="click:redirect.bind($data,'contact')">Contact</a> 
 								</li>
 							</li>
 						</li>
@@ -47,7 +47,7 @@
 			</div>
 		</div>   
 	</nav>
-	<section class="main__image-contain">
+	<section class="main__image-contain" id="home">
 	</section>
 	<center style="width: 420px;margin: auto;margin-top: -300px;">
 		<h1 class="animated fadeInDown">I am <br><b>Mario Ruci</b>.</h1>
@@ -62,7 +62,7 @@
 			<i class="fas fa-envelope-open-text"></i> Get in touch
 		</button>
 	</center>
-	<section class="content__section">
+	<section class="content__section" id="about">
 		<div class="container">
 			<div class="col-6 content__left animated fadeInLeft">
 				<h2>About</h2>
@@ -71,11 +71,11 @@
 				<p>During this period i have also been working as a freelancer on Upwork!</p>
 			</div>
 			<div class="col-6 text-center content__right animated fadeInRight">
-				<img src="assets/images/mario.png" style="border-radius: 50%;width:250px;height: 250px;margin-top:50px;">
+				<img src="assets/images/mario.png" style="max-width:100%;margin-top:50px;">
 			</div>
 		</div>
 	</section>
-	<section class="content__section" style="background:#FAFAFA;">
+	<section class="content__section" style="background:#FAFAFA;" id="skills">
 		<div class="container text-center">
 			<h2>Skills</h2>
 			<hr>
@@ -86,10 +86,10 @@
 				<div class="skill__item">
 					<div class="circle" style="display: block;margin: auto;margin-bottom: 10px;">
 						<!-- ko ifnot: isImage -->
-							<span data-bind="html:icon"></span>
+						<span data-bind="html:icon"></span>
 						<!-- /ko -->
 						<!-- ko if: isImage -->
-							<img  data-bind="attr:{'src':'assets/images/'+icon}" width="60">
+						<img  data-bind="attr:{'src':'assets/images/'+icon}" width="60">
 						<!-- /ko -->
 					</div>
 					<h5 data-bind="text:name"></h5>
@@ -99,7 +99,7 @@
 			<!-- /ko -->
 		</div>
 	</section>
-	<section class="content__section">
+	<section class="content__section" id="work">
 		<div class="container text-center">
 			<h2>Work</h2>
 			<hr>
@@ -207,9 +207,48 @@
 					</div>
 				</div>
 			</section>
+			<h3>Personal Projects</h3>
+			<div class="row">
+				<div class="project__item">
+					<div class="project__item-icon">
+						<img src="assets/images/project__icon.png" width="35">
+					</div>
+					<label class="project__item-title">Project 1</label>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, repellat aliquid sed deleniti molestias tenetur ab nulla reprehenderit magnam porro nihil fuga voluptatem, possimus, ipsam dolorum ipsa id in quia?</p>
+					<hr>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+				</div>
+				<div class="project__item">
+					<div class="project__item-icon">
+						<img src="assets/images/project__icon.png" width="35">
+					</div>
+					<label class="project__item-title">Project 2</label>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, repellat aliquid sed deleniti molestias tenetur ab nulla reprehenderit magnam porro nihil fuga voluptatem, possimus, ipsam dolorum ipsa id in quia?</p>
+					<hr>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+				</div>
+				<div class="project__item">
+					<div class="project__item-icon">
+						<img src="assets/images/project__icon.png" width="35">
+					</div>
+					<label class="project__item-title">Project 3</label>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, repellat aliquid sed deleniti molestias tenetur ab nulla reprehenderit magnam porro nihil fuga voluptatem, possimus, ipsam dolorum ipsa id in quia?</p>
+					<hr>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+					<i class="fas fa-code"></i>
+				</div>
+			</div>
 		</div>
 	</section>
-	<section class="content__section">
+	<section class="content__section" id="contact">
 		<div class="container text-center">
 			<h2>Contact me</h2>
 			<hr>
@@ -240,20 +279,38 @@
 			<i class="fas fa-envelope-open-text"></i>
 		</a>
 	</div>
+	<div class="modal fade" id="credits" tabindex="-1" role="dialog" aria-labelledby="credits" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Credits</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					TBI add credits
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
-<footer style=" background: url('assets/images/footer.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-	background-position: top 0px right 0px;height:650px;width:100%;float:left;">
-	<div  style="position:relative;margin-top:590px;text-align:center;color:#fff;font-size:19px;">
+<footer style=" background: url('assets/images/footer.png');background-repeat: no-repeat;background-size: 100% 100%;background-position: top 0px right 0px;height:650px;width:100%;float:left;">
+	<div  style="position:relative;margin-top:590px;text-align:center;color:#fff;font-size:19px;width:100%;">
 		Designed & Developed by Mario Ruci
 		<br>
 		© Copyright 2020 Mario Ruci ®
+		<a data-toggle="modal" class="pull-right" style="float: right;margin-right: 3rem;cursor:pointer;" data-target="#credits">
+			Credits
+		</a>
 	</div>
-	</footer>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/4d40715e6f.js" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
 <script src="assets/js/main.js"></script>
 </html>
