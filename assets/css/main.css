@@ -2,6 +2,7 @@ body {
     font-family: 'Raleway' !important;
     font-weight: 300 !important;
     font-size: 17px;
+    min-width: fit-content;
 }
 h1{
     font-size: 60px !important;
@@ -104,8 +105,9 @@ h1, h2, h3, h4, h5, h6 {
     height:100vh;
     background: url('../images/back.png');
     background-repeat: no-repeat;
-    background-size: 100% 120%;
-    background-position: top 50px right 0px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 100px;
 }
 .social{
     width: 40px;
@@ -148,7 +150,19 @@ h1, h2, h3, h4, h5, h6 {
     color:#0183FF;
 }
 .skill__item{
-    display:inline-block;margin:10px;background:#fff;width: 22%;text-align: center;border-radius: 20px;box-shadow: 0 0 15px 0 rgba(42,87,128,0.07), 0 14px 20px 0 rgba(42,87,128,0.12);height:140px;padding: 10px;
+    display:inline-block;
+    margin:10px;
+    background:#fff;
+    width: 220px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 0 rgba(42,87,128,0.07), 0 14px 20px 0 rgba(42,87,128,0.12);
+    height:140px;
+    padding: 10px;
+    word-break: break-all;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .project__item{
     -webkit-box-sizing: border-box;
@@ -179,4 +193,27 @@ h1, h2, h3, h4, h5, h6 {
     padding:7px;
     width:50px;
     border-radius: 6px;
+}
+@media screen and (max-width: 768px) {
+    .main__title {
+        font-size: 50px !important;
+    }
+    .content__left{
+        float: left;
+        width:100%;
+        max-width: 100%;
+    }
+    .content__right{
+        float: left;
+        width:100%;
+        max-width: 100%;
+    }
+    .cd-timeline-content h2{
+        font-size: 1.2rem !important;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .main__image-contain{
+        margin-top: 70px;
+    }
 }
