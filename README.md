@@ -1,2 +1,2 @@
 # website
-My personal website
+A simple personal website template
